@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Niña Hermosa 💖</title>
+    <style>
+        /* RESETEO ULTRA-LIGERO */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffb3c1 50%, #ff85a1 100%);
+            min-height: 100vh;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "🌸 ✨ 💕 🌷";
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            top: 5%;
+            left: 5%;
+            letter-spacing: 50px;
+            pointer-events: none;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 30px;
+            padding: 30px 25px;
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            border: 2px solid #ffccd5;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            color: #ff477e;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: 0.03em;
+        }
+        
+        .description {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 20px;
+            text-align: left;
+            background: #fffbfa;
+            padding: 15px;
+            border-radius: 15px;
+            border-left: 4px solid #ff477e;
+            box-shadow: 0 2px 8px rgba(255, 71, 126, 0.05);
+        }
+
+        .description p { margin-bottom: 10px; }
+        .description p:last-child { margin-bottom: 0; }
+
+        .te-amo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ff477e;
+            margin-bottom: 25px;
+            text-align: center;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+
+        .media-section {
+            background: #fff5f6;
+            border: 1px solid #ffccd5;
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: inset 0 2px 4px rgba(255,204,213,0.3);
+        }
+        .media-section h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #ff7096;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .custom-audio-player {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #ffccd5;
+            padding: 12px 15px;
+            border-radius: 15px;
+            gap: 12px;
+            box-shadow: 0 4px 10px rgba(255, 112, 150, 0.05);
+        }
+        .play-btn {
+            width: 42px;
+            height: 42px;
+            background: #ff477e;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(255, 71, 126, 0.3);
+            transition: transform 0.2s;
+        }
+        .play-btn:active { transform: scale(0.95); }
+        .progress-container {
+            flex-grow: 1;
+            height: 6px;
+            background: #ffe5ec;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #ff477e;
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+        .time-display {
+            font-size: 0.85rem;
+            color: #ff7096;
+            font-variant-numeric: tabular-nums;
+            min-width: 75px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        video { width: 100%; height: 100%; object-fit: contain; }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <h1>PARA LA NIÑA QUE ME MOTIVA A SER MEJOR EN LO QUE HAGO 💖</h1>
+        
+        <div class="description">
+            <p>No sé si te lo dije antes, pero fuiste la primera a la que le enseñé lo que toco en la guitarra y creo que la primera que me dijo que suena muy bonito, aunque yo no creía eso...</p>
+            <p>Ahora muchas de las canciones que toco solo son para ti y sueño con algún día cantártelas en persona. Ya pasaron como 7 meses desde que te envié la primera canción, así que lo volveré a intentar, a ver si esta vez mejoré. ✨</p>
+        </div>
+
+        <span class="te-amo">¡Te amo mucho! 💓</span>
+
+        <!-- SECCIÓN AUDIO -->
+        <div class="media-section">
+            <h3>❤️ Primera versión</h3>
+            <audio id="audioReal" preload="metadata">
+                <source src="https://res.cloudinary.com/dqosbnx7w/video/upload/q_auto,f_auto/v1781408484/WhatsApp_Audio_2026-06-13_at_9.43.17_PM_oe857e.m4a" type="audio/mp4">
+            </audio>
+            <div class="custom-audio-player">
+                <button class="play-btn" id="btnPlay">▶</button>
+                <div class="progress-container" id="progresoContenedor">
+                    <div class="progress-bar" id="barraProgreso"></div>
+                </div>
+                <div class="time-display" id="tiempoTexto">0:00 / 0:34</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN VIDEO -->
+        <div class="media-section">
+            <h3>✨ Versión final</h3>
+            <div class="video-wrapper">
+                <video controls playsinline preload="metadata">
+                    <source src="https://res.cloudinary.com/dqosbnx7w/video/upload/q_auto,f_auto/v1781408639/0613_a3hjcg.mp4" type="video/mp4">
+                    Tu dispositivo no soporta este video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audioReal');
+        const btnPlay = document.getElementById('btnPlay');
+        const barraProgreso = document.getElementById('barraProgreso');
+        const progresoContenedor = document.getElementById('progresoContenedor');
+        const tiempoTexto = document.getElementById('tiempoTexto');
+        
+        const MAX_DURACION = 34;
+
+        function formatearTiempo(segundos) {
+            const mins = Math.floor(segundos / 60);
+            const secs = Math.floor(segundos % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        btnPlay.addEventListener('click', () => {
+            if (audio.paused) {
+                if (audio.currentTime >= MAX_DURACION) { audio.currentTime = 0; }
+                audio.play();
+                btnPlay.textContent = '💖';
+            } else {
+                audio.pause();
+                btnPlay.textContent = '▶';
+            }
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            let tiempoActual = audio.currentTime;
+            if (tiempoActual >= MAX_DURACION) {
+                audio.pause();
+                tiempoActual = MAX_DURACION;
+                audio.currentTime = MAX_DURACION;
+                btnPlay.textContent = '▶';
+            }
+            const porcentaje = (tiempoActual / MAX_DURACION) * 100;
+            barraProgreso.style.width = `${porcentaje}%`;
+            tiempoTexto.textContent = `${formatearTiempo(tiempoActual)} / 0:34`;
+        });
+
+        progresoContenedor.addEventListener('click', (e) => {
+            const rect = progresoContenedor.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const anchoTotal = rect.width;
+            const porcentajeClic = clickX / anchoTotal;
+            let nuevoTiempo = porcentajeClic * MAX_DURACION;
+            audio.currentTime = nuevoTiempo;
+        });
+    </script>
+</body>
+</html>
